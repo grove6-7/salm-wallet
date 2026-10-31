@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Salm Wallet</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>body{background:var(--tg-theme-bg-color,#fff);color:var(--tg-theme-text-color,#000);padding:16px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}button{background:var(--tg-theme-button-color,#2481cc);color:#fff;border:none;border-radius:10px;width:100%;margin:8px 0;padding:14px;font-size:16px;font-weight:700}.box{background:var(--tg-theme-secondary-bg-color,#f0f0f0);word-break:break-all;border-radius:8px;margin:8px 0;padding:12px;font-size:14px}.hidden{display:none}h2{margin:16px 0 8px;font-size:18px}.center{text-align:center;margin-top:40px}#errorBox{color:red;word-break:break-all;background:#ffe6e6;border-radius:8px;margin-top:20px;padding:12px;display:none}</style>
-  <script type="module" crossorigin src="./assets/index-grdfAC4q.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 16px; background: var(--tg-theme-bg-color, #fff); color: var(--tg-theme-text-color, #000); }
+    button { padding: 14px; font-size: 16px; width: 100%; margin: 8px 0; border-radius: 10px; border: none; background: var(--tg-theme-button-color, #2481cc); color: #fff; font-weight: bold; }
+    .box { padding: 12px; background: var(--tg-theme-secondary-bg-color, #f0f0f0); border-radius: 8px; margin: 8px 0; word-break: break-all; font-size: 14px; }
+    .hidden { display: none; }
+    h2 { margin: 16px 0 8px; font-size: 18px; }
+    .center { text-align: center; margin-top: 40px; }
+    #errorBox { color: red; background: #ffe6e6; padding: 12px; border-radius: 8px; margin-top: 20px; display: none; word-break: break-all; }
+  </style>
 </head>
 <body>
   <div id="loading" class="center">Загрузка кошелька...</div>
@@ -26,5 +33,102 @@
 
   <div id="errorBox"></div>
 
+  <script type="module">
+    // Импортируем рабочие библиотеки напрямую из CDN
+    import { mnemonicNew, mnemonicToPrivateKey } from 'https://esm.sh/@ton/crypto@3.3.0';
+    import { WalletContractV5R1 } from 'https://esm.sh/@ton/ton@15.1.1';
+
+    const USDT_MASTER = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
+    const TONCENTER_V3 = 'https://toncenter.com/api/v3';
+
+    function showError(msg) {
+      const box = document.getElementById('errorBox');
+      box.textContent = 'ОШИБКА: ' + msg;
+      box.style.display = 'block';
+      document.getElementById('loading').classList.add('hidden');
+    }
+
+    window.addEventListener('error', function(e) {
+      showError(e.message || 'Неизвестная ошибка (возможно, блокировка CDN)');
+    });
+
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+
+    async function init() {
+      try {
+        let walletData = JSON.parse(localStorage.getItem('wallet_data') || 'null');
+
+        // Сброс старых тестовых данных
+        if (walletData && (walletData.address.startsWith('UQ979') || walletData.address.startsWith('EQ54'))) {
+          localStorage.removeItem('wallet_data');
+          walletData = null;
+        }
+
+        if (!walletData) {
+          // Генерируем 24 слова через официальную библиотеку
+          const mnemonicArray = await mnemonicNew();
+          // Получаем ключи
+          const keyPair = await mnemonicToPrivateKey(mnemonicArray);
+          // Создаем реальный адрес V5R1
+          const wallet = WalletContractV5R1.create({
+            workchain: 0,
+            publicKey: keyPair.publicKey,
+          });
+          const address = wallet.address.toString({ bounceable: false });
+
+          walletData = {
+            mnemonic: mnemonicArray.join(' '),
+            address: address,
+            seedShown: false
+          };
+          localStorage.setItem('wallet_data', JSON.stringify(walletData));
+        }
+
+        if (!walletData.seedShown) {
+          document.getElementById('seedText').textContent = walletData.mnemonic;
+          document.getElementById('seedBox').classList.remove('hidden');
+          walletData.seedShown = true;
+          localStorage.setItem('wallet_data', JSON.stringify(walletData));
+        }
+
+        document.getElementById('toggleAddr').onclick = () => {
+          const box = document.getElementById('addrBox');
+          box.textContent = walletData.address;
+          box.classList.toggle('hidden');
+        };
+
+        await fetchBalances(walletData.address);
+
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('main').classList.remove('hidden');
+
+      } catch (e) {
+        showError(e.message);
+      }
+    }
+
+    async function fetchBalances(address) {
+      try {
+        const gramRes = await fetch(`https://toncenter.com/api/v2/getAddressBalance?address=${encodeURIComponent(address)}`);
+        const gramData = await gramRes.json();
+        const gram = gramData.result ? (Number(gramData.result) / 1e9).toFixed(4) : '0.0000';
+        document.getElementById('gramBal').textContent = gram;
+
+        const usdtRes = await fetch(`${TONCENTER_V3}/jetton/wallets?owner_address=${encodeURIComponent(address)}&jetton_address=${USDT_MASTER}`);
+        const usdtData = await usdtRes.json();
+        const wallet = usdtData.jetton_wallets?.[0];
+        const usdt = wallet ? (Number(wallet.balance) / 1e6).toFixed(2) : '0.00';
+        document.getElementById('usdtBal').textContent = usdt;
+      } catch (e) {
+        document.getElementById('gramBal').textContent = 'ошибка сети';
+        document.getElementById('usdtBal').textContent = 'ошибка сети';
+      }
+    }
+
+    init();
+  </script>
 </body>
 </html>
