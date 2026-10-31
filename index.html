@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Salm Wallet</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>:root{--bg:var(--tg-theme-bg-color,#fff);--text:var(--tg-theme-text-color,#000);--hint:var(--tg-theme-hint-color,#999);--btn:var(--tg-theme-button-color,#2481cc);--btn-text:var(--tg-theme-button-text-color,#fff);--secondary-bg:var(--tg-theme-secondary-bg-color,#f0f0f0)}body{background:var(--bg);color:var(--text);box-sizing:border-box;flex-direction:column;min-height:100vh;margin:0;padding:16px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;display:flex}.screen{flex-direction:column;flex-grow:1;display:none}.screen.active{display:flex}button{background:var(--btn);width:100%;color:var(--btn-text);cursor:pointer;border:none;border-radius:12px;margin:8px 0;padding:16px;font-size:16px;font-weight:600}button:active{opacity:.8}button.secondary{background:var(--secondary-bg);color:var(--text)}.box{background:var(--secondary-bg);word-break:break-all;border-radius:12px;margin:12px 0;padding:16px;font-size:14px}.hidden{display:none!important}h1{text-align:center;margin-bottom:8px;font-size:24px}h2{margin:16px 0 8px;font-size:18px}.center{text-align:center}.seed-words{grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;display:grid}.seed-word{background:var(--bg);border:1px solid var(--hint);border-radius:8px;padding:8px;font-family:monospace;font-size:14px}.seed-num{color:var(--hint);margin-right:8px;font-size:12px}textarea{border:1px solid var(--hint);background:var(--bg);width:100%;color:var(--text);box-sizing:border-box;resize:none;border-radius:12px;padding:12px;font-family:monospace;font-size:16px}#errorBox{color:#d32f2f;word-break:break-all;background:#ffebee;border-radius:12px;margin-top:auto;padding:12px;font-size:13px;display:none}.loading{color:var(--hint);text-align:center;margin-top:40px;font-size:18px}</style>
-  <script type="module" crossorigin src="./assets/index-CuZOUPcm.js"></script>
+  <style>:root{--bg:var(--tg-theme-bg-color,#fff);--text:var(--tg-theme-text-color,#000);--hint:var(--tg-theme-hint-color,#8e8e93);--btn:var(--tg-theme-button-color,#007aff);--btn-text:var(--tg-theme-button-text-color,#fff);--secondary-bg:var(--tg-theme-secondary-bg-color,#f2f2f7);--card-bg:linear-gradient(135deg, #2481cc, #1c5a8f);--danger:#ff3b30;--radius:16px}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{background:var(--bg);color:var(--text);flex-direction:column;min-height:100vh;margin:0;padding:16px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;transition:background .3s,color .3s;display:flex}.screen{flex-direction:column;flex-grow:1;animation:.3s fadeIn;display:none}.screen.active{display:flex}@keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}h1{margin:0 0 8px;font-size:28px;font-weight:700}h2{margin:0 0 4px;font-size:20px;font-weight:600}p{color:var(--hint);margin:0 0 16px;font-size:15px;line-height:1.4}button{border-radius:var(--radius);background:var(--btn);width:100%;color:var(--btn-text);cursor:pointer;border:none;padding:16px;font-size:17px;font-weight:600;transition:opacity .2s,transform .1s}button:active{opacity:.8;transform:scale(.98)}button.secondary{background:var(--secondary-bg);color:var(--btn)}button.danger{color:var(--danger);background:0 0}.balance-card{background:var(--card-bg);color:#fff;border-radius:24px;margin-bottom:24px;padding:24px;position:relative;box-shadow:0 10px 20px #2481cc40}.balance-card h3{opacity:.8;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px;font-size:14px;font-weight:500}.balance-card .amount{align-items:baseline;gap:8px;margin-bottom:4px;font-size:32px;font-weight:700;display:flex}.balance-card .amount span{opacity:.9;font-size:18px;font-weight:500}.balance-card .address{background:#0003;border-radius:8px;margin-top:8px;padding:6px 10px;font-family:monospace;font-size:13px;display:inline-block}.actions-row{gap:12px;margin-bottom:24px;display:flex}.action-btn{background:var(--secondary-bg);color:var(--text);border-radius:var(--radius);cursor:pointer;flex-direction:column;flex:1;justify-content:center;align-items:center;gap:8px;padding:16px;font-size:14px;font-weight:500;transition:opacity .2s;display:flex}.action-btn:active{opacity:.7}.action-btn svg{width:24px;height:24px;fill:var(--btn)}.seed-grid{background:var(--secondary-bg);border-radius:var(--radius);grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;padding:16px;display:grid}.seed-word{background:var(--bg);border-radius:10px;align-items:center;padding:10px 12px;font-family:monospace;font-size:15px;display:flex;box-shadow:0 1px 3px #0000000d}.seed-num{color:var(--hint);margin-right:10px;font-size:12px;font-weight:700}textarea{border-radius:var(--radius);border:2px solid var(--secondary-bg);background:var(--secondary-bg);width:100%;color:var(--text);resize:none;outline:none;padding:16px;font-family:monospace;font-size:16px;transition:border-color .2s}textarea:focus{border-color:var(--btn)}.bottom-panel{flex-direction:column;gap:8px;margin-top:auto;padding-top:16px;display:flex}#errorBox{background:var(--danger);color:#fff;border-radius:var(--radius);z-index:1000;padding:16px;font-size:14px;animation:.3s slideUp;display:none;position:fixed;bottom:20px;left:20px;right:20px;box-shadow:0 4px 12px #0003}@keyframes slideUp{0%{transform:translateY(100%)}to{transform:translateY(0)}}.loading-spinner{border:3px solid var(--secondary-bg);border-top-color:var(--btn);border-radius:50%;width:32px;height:32px;margin:40px auto;animation:1s linear infinite spin}@keyframes spin{to{transform:rotate(360deg)}}.hidden{display:none!important}</style>
+  <script type="module" crossorigin src="./assets/index-v-ga3046.js"></script>
 </head>
 <body>
 
@@ -14,56 +14,85 @@
 
   <!-- ЭКРАН 1: ЗАГРУЗКА -->
   <div id="screen-loading" class="screen active">
-    <div class="loading">Загрузка кошелька...</div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="loading-spinner"></div>
+      <p style="margin-top: 16px;">Загрузка...</p>
+    </div>
   </div>
 
   <!-- ЭКРАН 2: ПРИВЕТСТВИЕ -->
   <div id="screen-welcome" class="screen">
     <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-      <h1>Добро пожаловать</h1>
-      <p class="center" style="color: var(--hint); margin-bottom: 32px;">Salm Wallet — безопасный кошелек на TON</p>
-      <button id="btn-goto-create">Создать новый кошелек</button>
-      <button id="btn-goto-import" class="secondary">У меня уже есть фраза</button>
+      <div style="text-align: center; margin-bottom: 40px;">
+        <div style="width: 80px; height: 80px; background: var(--btn); border-radius: 24px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h1>Salm Wallet</h1>
+        <p>Самый простой и безопасный кошелек для TON, USDT и GRAM</p>
+      </div>
+      <div class="bottom-panel">
+        <button id="btn-goto-create">Создать новый кошелек</button>
+        <button id="btn-goto-import" class="secondary">У меня уже есть фраза</button>
+      </div>
     </div>
   </div>
 
-  <!-- ЭКРАН 3: СОЗДАНИЕ (SEED) -->
+  <!-- ЭКРАН 3: СОЗДАНИЕ -->
   <div id="screen-create" class="screen">
-    <h2 class="center">Ваша секретная фраза</h2>
-    <p class="center" style="color: var(--hint); font-size: 13px;">Запишите эти 24 слова в правильном порядке. Никому их не показывайте.</p>
+    <h1>Секретная фраза</h1>
+    <p>Запишите эти 24 слова в правильном порядке. <b>Никому их не показывайте.</b> Они дают полный доступ к кошельку.</p>
     
-    <div class="box seed-words" id="seedContainer"></div>
+    <div class="seed-grid" id="seedContainer"></div>
     
-    <div style="flex-grow: 1;"></div>
-    <button id="btn-saved-seed">Я сохранил фразу</button>
+    <div class="bottom-panel">
+      <button id="btn-saved-seed">Я сохранил фразу</button>
+      <button id="btn-cancel-create" class="secondary">Отмена</button>
+    </div>
   </div>
 
   <!-- ЭКРАН 4: ВХОД -->
   <div id="screen-import" class="screen">
-    <h2 class="center">Вход в кошелек</h2>
-    <p class="center" style="color: var(--hint); font-size: 13px;">Введите 24 слова через пробел</p>
+    <h1>Вход</h1>
+    <p>Введите 24 слова вашей секретной фразы через пробел.</p>
     
-    <textarea id="importInput" rows="6" placeholder="слово1 слово2 слово3 ..."></textarea>
+    <textarea id="importInput" rows="5" placeholder="слово1 слово2 слово3 ..."></textarea>
     
-    <div style="flex-grow: 1;"></div>
-    <button id="btn-do-import">Войти</button>
-    <button id="btn-cancel-import" class="secondary">Отмена</button>
+    <div class="bottom-panel">
+      <button id="btn-do-import">Войти</button>
+      <button id="btn-cancel-import" class="secondary">Отмена</button>
+    </div>
   </div>
 
-  <!-- ЭКРАН 5: ГЛАВНЫЙ ЭКРАН -->
+  <!-- ЭКРАН 5: ГЛАВНЫЙ -->
   <div id="screen-main" class="screen">
-    <h1>Мой кошелек</h1>
-    
-    <button id="toggleAddr" class="secondary">Показать адрес</button>
-    <div id="addrBox" class="box hidden"></div>
-
-    <div class="box" style="margin-top: 24px;">
-      <h2 style="margin: 0 0 8px;">GRAM: <span id="gramBal">—</span></h2>
-      <h2 style="margin: 0;">USDT: <span id="usdtBal">—</span></h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <h1 style="margin: 0; font-size: 22px;">Salm Wallet</h1>
+      <div style="width: 40px; height: 40px; background: var(--secondary-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--hint)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+      </div>
     </div>
-    
-    <div style="flex-grow: 1;"></div>
-    <button id="btn-logout" class="secondary" style="color: #d32f2f;">Выйти и удалить кошелек</button>
+
+    <div class="balance-card">
+      <h3>Общий баланс</h3>
+      <div class="amount"><span id="gramBal">0.00</span> <span>GRAM</span></div>
+      <div class="amount" style="font-size: 24px; margin-top: 8px;"><span id="usdtBal">0.00</span> <span>USDT</span></div>
+      <div class="address" id="mainAddrDisplay">UQ...</div>
+    </div>
+
+    <div class="actions-row">
+      <div class="action-btn" id="btn-copy-addr">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Адрес</span>
+      </div>
+      <div class="action-btn" id="btn-refresh">
+        <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+        <span>Обновить</span>
+      </div>
+    </div>
+
+    <div class="bottom-panel">
+      <button id="btn-logout" class="danger">Выйти и удалить кошелек</button>
+    </div>
   </div>
 
 </body>
