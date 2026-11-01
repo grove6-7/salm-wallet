@@ -6,7 +6,7 @@
   <title>Salm Wallet</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>:root{--bg:#0f0f11;--text:#fff;--hint:#8e8e93;--card-bg:#1c1c1e;--divider:#2c2c2e;--green:#34c759}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{background:var(--bg);color:var(--text);flex-direction:column;align-items:center;min-height:100vh;margin:0;padding:20px 20px 140px;font-family:-apple-system,sans-serif;display:flex}.page{flex-direction:column;align-items:center;width:100%;max-width:400px;display:none}.page.active{display:flex}.header{text-align:center;width:100%;margin-top:10px;margin-bottom:16px}.header .label{color:var(--hint);margin-bottom:4px;font-size:15px}.header .amount{letter-spacing:-1px;font-size:40px;font-weight:700}.address-pill{background:var(--card-bg);color:var(--hint);cursor:pointer;border:1px solid #ffffff0d;border-radius:20px;justify-content:center;align-items:center;gap:8px;margin-bottom:24px;padding:10px 16px;font-size:14px;display:flex}.section-title{justify-content:space-between;align-items:center;width:100%;margin-bottom:12px;font-size:18px;font-weight:600;display:flex}.coin-list{background:var(--card-bg);border-radius:20px;width:100%;overflow:hidden}.coin-row{border-bottom:1px solid var(--divider);align-items:center;padding:16px;display:flex}.coin-row:last-child{border-bottom:none}.coin-icon{background:#333;border-radius:50%;justify-content:center;align-items:center;width:46px;height:46px;margin-right:14px;font-weight:700;display:flex}.coin-info{flex-grow:1}.coin-name-row{align-items:center;gap:6px;margin-bottom:2px;display:flex}.coin-name{font-size:17px;font-weight:600}.coin-rate{color:var(--hint);gap:6px;font-size:14px;display:flex}.coin-balance{text-align:right}.coin-amount{margin-bottom:2px;font-size:17px;font-weight:600}.coin-value{color:var(--hint);font-size:14px}.change.up{color:var(--green)}.floating-nav-container{z-index:1000;pointer-events:none;justify-content:center;display:flex;position:fixed;bottom:24px;left:0;right:0}.floating-nav{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);pointer-events:auto;background:#1e1e2366;border:1px solid #ffffff14;border-radius:40px;align-items:center;width:90%;max-width:340px;padding:6px;display:flex;position:relative}.nav-indicator{z-index:0;background:#ffffff26;border-radius:34px;width:calc(33.333% - 4px);height:calc(100% - 12px);transition:transform .4s;position:absolute;top:6px;left:6px}.nav-item{color:#ffffff80;cursor:pointer;z-index:1;border-radius:30px;flex-direction:column;flex:1;justify-content:center;align-items:center;gap:4px;height:56px;display:flex}.nav-item span{font-size:11px;font-weight:500}.nav-item.active{color:#fff}.seed-overlay{z-index:2000;background:#000000e6;justify-content:center;align-items:center;padding:20px;display:none;position:fixed;inset:0}.seed-overlay.show{display:flex}.seed-modal{background:#1c1c1e;border:1px solid #ffffff1a;border-radius:20px;width:100%;max-width:400px;padding:24px}.seed-words{word-break:break-word;background:#0f0f11;border-radius:12px;margin-bottom:16px;padding:16px;font-family:monospace;font-size:14px}.seed-modal button{background:var(--green);color:#fff;border:none;border-radius:12px;width:100%;padding:14px;font-weight:600}#error-box{color:#fff;text-align:center;z-index:9999;background:red;border-radius:10px;width:100%;max-width:400px;margin:10px;padding:20px;font-size:16px;font-weight:700;display:none;position:relative}</style>
-  <script type="module" crossorigin src="./assets/index-DG00LW7U.js"></script>
+  <script type="module" crossorigin src="/assets/index-D0rWSDkV.js"></script>
 </head>
 <body>
   <div id="error-box"></div>
@@ -44,12 +44,6 @@
       <button onclick="document.getElementById('seedOverlay').classList.remove('show')">Я сохранил</button>
     </div>
   </div>
-
-  <!-- ПОДКЛЮЧАЕМ BUFFER ПОЛИФИЛЛ -->
-  <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script>
-  <script>
-    window.Buffer = buffer.Buffer;
-  </script>
 
 </body>
 </html>
