@@ -5,92 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Salm Wallet</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>:root{--bg:var(--tg-theme-bg-color,#fff);--text:var(--tg-theme-text-color,#000);--hint:var(--tg-theme-hint-color,#8e8e93);--btn:var(--tg-theme-button-color,#2ea6ff);--btn-text:var(--tg-theme-button-text-color,#fff);--secondary-bg:var(--tg-theme-secondary-bg-color,#f2f2f7);--card-bg:linear-gradient(145deg, #154279, #0b213b);--danger:#ff453a;--radius:16px}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{background:var(--bg);color:var(--text);flex-direction:column;min-height:100vh;margin:0;padding:20px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;display:flex;overflow-x:hidden}.screen{flex-direction:column;flex-grow:1;animation:.4s cubic-bezier(.16,1,.3,1) fadeIn;display:none}.screen.active{display:flex}@keyframes fadeIn{0%{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}h1{letter-spacing:-.5px;margin:0 0 8px;font-size:26px;font-weight:700}h2{margin:0 0 4px;font-size:20px;font-weight:600}p{color:var(--hint);margin:0 0 16px;font-size:15px;line-height:1.4}button{border-radius:var(--radius);background:var(--btn);width:100%;color:var(--btn-text);cursor:pointer;border:none;padding:16px;font-size:17px;font-weight:600;transition:opacity .2s,transform .1s}button:active{opacity:.8;transform:scale(.97)}button.secondary{background:var(--secondary-bg);color:var(--btn)}button.danger{color:var(--danger);background:0 0}.balance-card{background:var(--card-bg);color:#fff;border:1px solid #ffffff1a;border-radius:24px;margin-bottom:24px;padding:24px;position:relative;box-shadow:0 12px 24px #00000026}.balance-card h3{opacity:.7;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px;font-size:12px;font-weight:600}.balance-card .amount{letter-spacing:-1px;align-items:baseline;gap:8px;margin-bottom:8px;font-size:34px;font-weight:700;display:flex}.balance-card .amount span{opacity:.8;letter-spacing:0;font-size:16px;font-weight:500}.balance-card .address{white-space:nowrap;text-overflow:ellipsis;background:#0000004d;border:1px solid #ffffff0d;border-radius:10px;max-width:100%;margin-top:12px;padding:8px 12px;font-family:monospace;font-size:13px;display:inline-block;overflow:hidden}.actions-row{gap:16px;margin-bottom:24px;display:flex}.action-btn{background:var(--secondary-bg);color:var(--text);border-radius:var(--radius);cursor:pointer;border:1px solid #0000000d;flex-direction:column;flex:1;justify-content:center;align-items:center;gap:8px;padding:16px;font-size:14px;font-weight:600;transition:opacity .2s,transform .1s;display:flex}.action-btn:active{opacity:.7;transform:scale(.97)}.action-btn svg{width:28px;height:28px;fill:var(--btn)}.seed-grid{background:var(--secondary-bg);border-radius:var(--radius);grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;padding:16px;display:grid}.seed-word{background:#ffffff80;border:1px solid #0000000d;border-radius:10px;align-items:center;padding:10px 12px;font-family:monospace;font-size:15px;display:flex}.seed-num{color:var(--hint);margin-right:10px;font-size:12px;font-weight:700}textarea{border-radius:var(--radius);border:2px solid var(--secondary-bg);background:var(--secondary-bg);width:100%;color:var(--text);resize:none;outline:none;padding:16px;font-family:monospace;font-size:16px;transition:border-color .2s}textarea:focus{border-color:var(--btn)}.bottom-panel{flex-direction:column;gap:12px;margin-top:auto;padding-top:16px;display:flex}.toast-container{z-index:1000;pointer-events:none;flex-direction:column;align-items:center;display:flex;position:fixed;bottom:24px;left:20px;right:20px}.toast{-webkit-backdrop-filter:blur(12px);color:#fff;pointer-events:auto;background:#1e1e1ed9;border:1px solid #ffffff1a;border-radius:16px;align-items:center;gap:12px;width:100%;max-width:400px;margin-top:10px;padding:16px 20px;font-size:15px;font-weight:500;transition:transform .2s,opacity .2s;animation:.3s cubic-bezier(.16,1,.3,1) forwards toastIn;display:flex;position:relative;overflow:hidden;box-shadow:0 10px 30px #0000004d}.toast.error{background:#ff453ae6;border-color:#ff645a4d}.toast.success{background:#34c759e6;border-color:#50dc784d}.toast-icon{flex-shrink:0;font-size:20px}.toast-progress{background:#fff9;width:100%;height:3px;animation:5s linear forwards progressShrink;position:absolute;bottom:0;left:0}@keyframes progressShrink{0%{width:100%}to{width:0%}}@keyframes toastIn{0%{opacity:0;transform:translateY(50px)scale(.9)}to{opacity:1;transform:translateY(0)scale(1)}}.toast.swiped{opacity:0;transform:translateY(100px)}.loading-spinner{border:3px solid #0000001a;border-top-color:var(--btn);border-radius:50%;width:36px;height:36px;margin:40px auto;animation:1s linear infinite spin}@keyframes spin{to{transform:rotate(360deg)}}.hidden{display:none!important}.logo-placeholder{background:linear-gradient(135deg,#2ea6ff,#06c);border-radius:24px;justify-content:center;align-items:center;width:84px;height:84px;margin:0 auto 24px;display:flex;box-shadow:0 8px 24px #2ea6ff4d}</style>
-  <script type="module" crossorigin src="./assets/index-BLGzq7F_.js"></script>
+  <style>:root{--bg:#0f0f11;--text:#fff;--hint:#8e8e93;--card-bg:#1c1c1e;--divider:#2c2c2e;--green:#34c759;--red:#ff453a;--badge-bg:#34c75926;--badge-text:#34c759}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{background:var(--bg);color:var(--text);flex-direction:column;align-items:center;min-height:100vh;margin:0;padding:20px 20px 140px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;display:flex}.page{flex-direction:column;align-items:center;width:100%;max-width:400px;animation:.3s fadeIn;display:none}.page.active{display:flex}@keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.header{text-align:center;width:100%;margin-top:10px;margin-bottom:16px}.header .label{color:var(--hint);margin-bottom:4px;font-size:15px;font-weight:400}.header .amount{letter-spacing:-1px;font-size:40px;font-weight:700}.address-pill{background:var(--card-bg);color:var(--hint);cursor:pointer;border:1px solid #ffffff0d;border-radius:20px;justify-content:center;align-items:center;gap:8px;margin-bottom:24px;padding:10px 16px;font-size:14px;transition:background .2s,transform .1s;display:flex}.address-pill:active{background:#2c2c2e;transform:scale(.98)}.address-pill .addr-text{color:#fff;font-family:monospace;font-weight:500}.address-pill svg{fill:#fff;opacity:.7;width:16px;height:16px}.address-pill.copied{background:#34c75933;border-color:#34c7594d}.address-pill.copied .addr-text{color:var(--green)}.address-pill.copied svg{fill:var(--green);opacity:1}.section-title{justify-content:space-between;align-items:center;width:100%;margin-bottom:12px;font-size:18px;font-weight:600;display:flex}.section-title span{color:var(--hint);font-size:14px;font-weight:400}.coin-list{background:var(--card-bg);border-radius:20px;width:100%;overflow:hidden}.coin-row{border-bottom:1px solid var(--divider);align-items:center;padding:16px;display:flex}.coin-row:last-child{border-bottom:none}.coin-icon{flex-shrink:0;width:46px;height:46px;margin-right:14px}.coin-icon img{object-fit:cover;border-radius:50%;width:100%;height:100%}.coin-info{flex-grow:1}.coin-name-row{align-items:center;gap:6px;margin-bottom:2px;display:flex}.coin-name{font-size:17px;font-weight:600}.verified-icon{fill:#2ea6ff;width:16px;height:16px}.apy-badge{background:var(--badge-bg);color:var(--badge-text);border-radius:4px;padding:2px 6px;font-size:11px;font-weight:600}.coin-rate{color:var(--hint);gap:6px;font-size:14px;display:flex}.coin-balance{text-align:right}.coin-amount{margin-bottom:2px;font-size:17px;font-weight:600}.coin-value{color:var(--hint);font-size:14px}.change.up{color:var(--green)}.change.down{color:var(--red)}.stub{text-align:center;flex-direction:column;justify-content:center;align-items:center;height:60vh;display:flex}.stub-icon{width:64px;height:64px;fill:var(--hint);opacity:.5;margin-bottom:16px}.stub h2{margin:0 0 8px;font-size:24px}.stub p{color:var(--hint);margin:0}.floating-nav-container{z-index:1000;pointer-events:none;justify-content:center;display:flex;position:fixed;bottom:24px;left:0;right:0}.floating-nav{-webkit-backdrop-filter:blur(20px)saturate(180%);pointer-events:auto;background:#1e1e2366;border:1px solid #ffffff14;border-radius:40px;align-items:center;width:90%;max-width:340px;padding:6px;display:flex;position:relative;box-shadow:0 8px 32px #0006,inset 0 1px 1px #fff3,inset 0 -1px 1px #0003}.nav-indicator{z-index:0;background:#ffffff26;border-radius:34px;width:calc(33.333% - 4px);height:calc(100% - 12px);transition:transform .4s cubic-bezier(.34,1.56,.64,1);position:absolute;top:6px;left:6px;box-shadow:0 4px 12px #0000001a}.nav-item{color:#ffffff80;cursor:pointer;z-index:1;border-radius:30px;flex-direction:column;flex:1;justify-content:center;align-items:center;gap:4px;height:56px;transition:color .3s;display:flex;position:relative}.nav-item svg{fill:currentColor;width:22px;height:22px;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}.nav-item span{font-size:11px;font-weight:500}.nav-item.active{color:#fff}.nav-item.active svg{filter:drop-shadow(0 0 6px #fff6);transform:scale(1.15)}.loading{text-align:center;color:var(--hint);padding:20px;font-size:14px}.seed-overlay{z-index:2000;background:#000000d9;justify-content:center;align-items:center;padding:20px;display:none;position:fixed;inset:0}.seed-overlay.show{display:flex}.seed-modal{background:#1c1c1e;border:1px solid #ffffff1a;border-radius:20px;width:100%;max-width:400px;padding:24px}.seed-modal h2{margin:0 0 12px;font-size:20px}.seed-modal p{color:var(--hint);margin:0 0 16px;font-size:14px;line-height:1.4}.seed-words{color:#fff;word-break:break-word;background:#0f0f11;border-radius:12px;margin-bottom:16px;padding:16px;font-family:monospace;font-size:14px;line-height:1.6}.seed-modal button{background:var(--green);color:#fff;cursor:pointer;border:none;border-radius:12px;width:100%;padding:14px;font-size:16px;font-weight:600}</style>
+  <script type="module" crossorigin src="./assets/index-CyGnj152.js"></script>
 </head>
 <body>
 
-  <div id="toastContainer" class="toast-container"></div>
+  <div id="page-wallet" class="page active">
+    <div class="header">
+      <div class="label">Общий баланс</div>
+      <div class="amount" id="totalBalance">$0.00</div>
+    </div>
 
-  <!-- ЭКРАН 1: ЗАГРУЗКА -->
-  <div id="screen-loading" class="screen active">
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      <div class="loading-spinner"></div>
+    <div class="address-pill" id="addressPill" onclick="copyAddress()">
+      <span id="shortAddress" class="addr-text">Загрузка...</span>
+      <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+    </div>
+
+    <div class="section-title">
+      Список Монет
+      <span>Управление</span>
+    </div>
+    <div class="coin-list" id="coinList">
+      <div class="loading">Загрузка...</div>
     </div>
   </div>
 
-  <!-- ЭКРАН 2: ПРИВЕТСТВИЕ -->
-  <div id="screen-welcome" class="screen">
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <div class="logo-placeholder">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="white"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-        </div>
-        <h1>Salm Wallet</h1>
-        <p>Самый простой и безопасный кошелек для TON, USDT и GRAM</p>
+  <div id="page-exchange" class="page">
+    <div class="stub">
+      <svg class="stub-icon" viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+      <h2>В разработке</h2>
+      <p>Раздел биржи скоро появится</p>
+    </div>
+  </div>
+
+  <div id="page-settings" class="page">
+    <div class="stub">
+      <svg class="stub-icon" viewBox="0 0 24 24"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+      <h2>В разработке</h2>
+      <p>Раздел настроек скоро появится</p>
+    </div>
+  </div>
+
+  <div class="floating-nav-container">
+    <div class="floating-nav">
+      <div class="nav-indicator" id="navIndicator" style="transform: translateX(100%);"></div>
+      <div class="nav-item" onclick="switchTab('exchange', this, 0)">
+        <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+        <span>Биржа</span>
       </div>
-      <div class="bottom-panel">
-        <button id="btn-goto-create">Создать новый кошелек</button>
-        <button id="btn-goto-import" class="secondary">У меня уже есть фраза</button>
+      <div class="nav-item active" onclick="switchTab('wallet', this, 1)">
+        <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        <span>Кошелек</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('settings', this, 2)">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        <span>Настройки</span>
       </div>
     </div>
   </div>
 
-  <!-- ЭКРАН 3: СОЗДАНИЕ -->
-  <div id="screen-create" class="screen">
-    <h1>Секретная фраза</h1>
-    <p>Запишите эти 24 слова. <b>Никому их не показывайте.</b></p>
-    
-    <div class="seed-grid" id="seedContainer"></div>
-    
-    <div class="bottom-panel">
-      <button id="btn-saved-seed">Я сохранил фразу</button>
-      <button id="btn-cancel-create" class="secondary">Отмена</button>
-    </div>
-  </div>
-
-  <!-- ЭКРАН 4: ВХОД -->
-  <div id="screen-import" class="screen">
-    <h1>Вход</h1>
-    <p>Введите 24 слова вашей секретной фразы через пробел.</p>
-    
-    <textarea id="importInput" rows="5" placeholder="слово1 слово2 слово3 ..."></textarea>
-    
-    <div class="bottom-panel">
-      <button id="btn-do-import">Войти</button>
-      <button id="btn-cancel-import" class="secondary">Отмена</button>
-    </div>
-  </div>
-
-  <!-- ЭКРАН 5: ГЛАВНЫЙ -->
-  <div id="screen-main" class="screen">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; margin-top: 10px;">
-      <h1 style="margin: 0; font-size: 22px; letter-spacing: -0.5px;">Salm Wallet</h1>
-      <div style="width: 44px; height: 44px; background: var(--secondary-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,0.05);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--hint)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-      </div>
-    </div>
-
-    <div class="balance-card">
-      <h3>Общий баланс</h3>
-      <div class="amount"><span id="gramBal">0.0000</span> <span>GRAM</span></div>
-      <div class="amount" style="font-size: 28px;"><span id="usdtBal">0.00</span> <span>USDT</span></div>
-      <div class="address" id="mainAddrDisplay">UQ...</div>
-    </div>
-
-    <div class="actions-row">
-      <div class="action-btn" id="btn-copy-addr">
-        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-        <span>Копировать</span>
-      </div>
-      <div class="action-btn" id="btn-refresh">
-        <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-        <span>Обновить</span>
-      </div>
-    </div>
-
-    <div class="bottom-panel">
-      <button id="btn-logout" class="danger">Выйти и удалить кошелек</button>
+  <!-- SEED-модалка -->
+  <div class="seed-overlay" id="seedOverlay">
+    <div class="seed-modal">
+      <h2>⚠️ Сохраните seed-фразу</h2>
+      <p>Она показывается <strong>только один раз</strong>. Если потеряете — кошелёк восстановить невозможно. Никому не передавайте эти слова.</p>
+      <div class="seed-words" id="seedWords"></div>
+      <button onclick="closeSeed()">Я сохранил</button>
     </div>
   </div>
 
